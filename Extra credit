@@ -1,0 +1,35 @@
+Aidan Thiele
+CS extra credit
+Nintendo Switch OS (Horizon)
+
+Interestingly enough the Nintendo Switch(NS) operating system requires programs to be multithreaded to effectively utilize the hardware. It is stated that engines that are predominantly single-threaded pose some optimization challenges¹. Additionally, it is noted that a 6 thread model was commonly used, with one main thread, one render thread, two short jobs threads, and two long job threads. The threading method here does appear to be similar to the same as covered in class. It also utilizes microkernel architecture.
+Due to the fact that Nintendo has not released much information about the OS of the Nintendo switch, except some limited information, and that it is codenamed “Horizon” it is hard to find much about scheduling². Despite this fact, I would say that it could be reasonably predicted that the scheduling system is multilevel. This is due to the fact that multilevel queues utilize a priority-based system, and when combining this fact with the information on how threads are divided, it could be reasonably assumed that a multilevel queue system is utilized. The description of these threads themselves (see source 1) indicates that the threads themselves also divide tasks up based on priority even. I cannot speak on fairness or starvation of this method due to the lack of information present on this operating system, and specifically on this topic.
+The switch memory management is predominantly done through a game card, though no save data is stored there³. By default the NS has 32 GB of internal storage⁴. Data from a NS can be moved to an SD card with some minor difficulties. Horizon utilized micro-segmentation⁵. As this software does not have all the information released to the public, it is hard to come by information on the memory as well, so this section is a bit limited.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Citations:
+Gandon, Christophe. “Why Developers Love the Nintendo Switch as Much as Gamers Do.” Game Developer, 6 Nov. 2019, https://www.gamedeveloper.com/design/why-developers-love-the-nintendo-switch-as-much-as-gamers-do. 
+
+“Nintendo Switch System Software.” Wikipedia, Wikimedia Foundation, 22 Apr. 2023, https://en.wikipedia.org/wiki/Nintendo_Switch_system_software. 
+
+“Data Management: Nintendo Switch Support: Nintendo.” Nintendo Official Website (Philippines), https://www.nintendo.com/ph/support/switch/data_management/index.html. 
+
+Etienne, Stefan, and Alice Newcome-Beill. “How to Upgrade Your Nintendo Switch Storage and Migrate Your Games.” The Verge, 8 Mar. 2019, https://www.theverge.com/22960596/upgrade-nintendo-switch-oled-storage-saves-games-transfer-microsd-card. 
+
+Gordon, Graeme. “Horizon Architecture: Vmware.” Digital Workspace Tech Zone, https://techzone.vmware.com/resource/horizon-architecture#display-protocol. 
+
